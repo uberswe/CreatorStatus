@@ -42,18 +42,14 @@ public class ModMessages {
     }
 
     public static <MSG> void sendToServer(MSG message) {
-        CreatorStatus.LOGGER.info("Sending msg to server");
         INSTANCE.sendToServer(message);
     }
 
     public static <MSG> void sendToPlayer(MSG message, ServerPlayer player) {
-        CreatorStatus.LOGGER.info("Sending msg to client");
-        CreatorStatus.LOGGER.info(player.getStringUUID());
         INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), message);
     }
 
     public static <MSG> void broadcast(MSG message) {
-        CreatorStatus.LOGGER.info("broadcast msg");
         INSTANCE.send(PacketDistributor.ALL.noArg(), message);
     }
 }

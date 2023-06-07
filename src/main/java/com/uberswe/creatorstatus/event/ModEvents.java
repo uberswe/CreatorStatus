@@ -23,14 +23,12 @@ public class ModEvents {
     public static void onPlayerJoinWorld(EntityJoinLevelEvent event) {
         if (!event.getLevel().isClientSide()) {
             if (event.getEntity() instanceof ServerPlayer player) {
-                CreatorStatus.LOGGER.info("Sending status to player");
                 ModMessages.sendToPlayer(new StatusS2CPacket(StatusData.getStatuses()), player);
             }
         }
     }
 
     public static void broadcastStatusUpdate() {
-        CreatorStatus.LOGGER.info("Broadcasting statuses");
         ModMessages.broadcast(new StatusS2CPacket(StatusData.getStatuses()));
     }
 }

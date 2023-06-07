@@ -14,28 +14,25 @@ public class Overlay {
     private static final ResourceLocation RECORDING = new ResourceLocation(CreatorStatus.MODID, "textures/overlay/recording.png");
     private static final ResourceLocation DONTRECORD = new ResourceLocation(CreatorStatus.MODID, "textures/overlay/dontrecord.png");
 
-    public static void statusIcon(PoseStack poseStack, int x, int y, UUID playerUUID, String name) {
+    public static void statusIcon(PoseStack poseStack, int x, int y, int p, UUID playerUUID, String name) {
         switch (StatusData.getPlayerStatus(playerUUID.toString())) {
             case CreatorStatus.STREAMING -> {
-                CreatorStatus.LOGGER.info(String.format("rendering streaming icon: %d, %d", x, y));
                 RenderSystem.setShader(GameRenderer::getPositionTexShader);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 RenderSystem.setShaderTexture(0, STREAMING);
-                GuiComponent.blit(poseStack, x, y, 0, 0, 12, 12, 12, 12);
+                GuiComponent.blit(poseStack, p + x, y, 0, 0, 7, 7, 7, 7);
             }
             case CreatorStatus.RECORDING -> {
-                CreatorStatus.LOGGER.info(String.format("rendering recording icon: %d, %d", x, y));
                 RenderSystem.setShader(GameRenderer::getPositionTexShader);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 RenderSystem.setShaderTexture(0, RECORDING);
-                GuiComponent.blit(poseStack, x, y, 0, 0, 12, 12, 12, 12);
+                GuiComponent.blit(poseStack, p + x, y, 0, 0, 7, 7, 7, 7);
             }
             case CreatorStatus.DO_NOT_RECORD -> {
-                CreatorStatus.LOGGER.info(String.format("rendering DNR icon: %d, %d", x, y));
                 RenderSystem.setShader(GameRenderer::getPositionTexShader);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 RenderSystem.setShaderTexture(0, DONTRECORD);
-                GuiComponent.blit(poseStack, x, y, 0, 0, 12, 12, 12, 12);
+                GuiComponent.blit(poseStack, p + x, y, 0, 0, 7, 7, 7, 7);
             }
         }
     }

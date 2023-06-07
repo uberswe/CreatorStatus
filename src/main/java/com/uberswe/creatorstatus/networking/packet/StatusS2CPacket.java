@@ -26,7 +26,6 @@ public class StatusS2CPacket {
     public boolean handle(Supplier<NetworkEvent.Context> supplier) {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
-            CreatorStatus.LOGGER.info("received message from server");
             // Client side handling
             StatusData.set(statuses);
         });
