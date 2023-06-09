@@ -20,22 +20,35 @@ public class Overlay {
                 RenderSystem.setShader(GameRenderer::getPositionTexShader);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 RenderSystem.setShaderTexture(0, STREAMING);
-                GuiComponent.blit(poseStack, p + x, y, 0, 0, 7, 7, 7, 7);
+                GuiComponent.blit(poseStack, p + x, y, 0, 0, 8, 8, 8, 8);
             }
             case CreatorStatus.RECORDING -> {
                 RenderSystem.setShader(GameRenderer::getPositionTexShader);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 RenderSystem.setShaderTexture(0, RECORDING);
-                GuiComponent.blit(poseStack, p + x, y, 0, 0, 7, 7, 7, 7);
+                GuiComponent.blit(poseStack, p + x, y, 0, 0, 8, 8, 8, 8);
             }
             case CreatorStatus.DO_NOT_RECORD -> {
                 RenderSystem.setShader(GameRenderer::getPositionTexShader);
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 RenderSystem.setShaderTexture(0, DONTRECORD);
-                GuiComponent.blit(poseStack, p + x, y, 0, 0, 7, 7, 7, 7);
+                GuiComponent.blit(poseStack, p + x, y, 0, 0, 8, 8, 8, 8);
             }
         }
     }
 
-
+    public static String getNameTagColor(String playerUUID) {
+        switch (StatusData.getPlayerStatus(playerUUID)) {
+            case CreatorStatus.STREAMING -> {
+                return "#af2ae8";
+            }
+            case CreatorStatus.RECORDING -> {
+                return "#eb4034";
+            }
+            case CreatorStatus.DO_NOT_RECORD -> {
+                return "#eb9c34";
+            }
+        }
+        return "#FFFFFF";
+    }
 }

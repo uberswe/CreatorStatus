@@ -1,6 +1,5 @@
 package com.uberswe.creatorstatus.event;
 
-import com.uberswe.creatorstatus.CreatorStatus;
 import com.uberswe.creatorstatus.client.StatusData;
 import com.uberswe.creatorstatus.command.StatusCommand;
 import com.uberswe.creatorstatus.networking.ModMessages;

@@ -1,9 +1,9 @@
 # CreatorStatus
 
-Use /status to change your status. Only works on a server I think. My first mod so I have no idea what it breaks.
+Use /status to change your status.
 
-This is basically a pre-alpha version currently.
+An Icon is shown in the Tab Overlay and your name color is changed to match.
 
 ## Compatibility
 
-Currently it has only been tested on Forge 45.0.50 and Minecraft 1.19.4
+See Releases for different versions.
