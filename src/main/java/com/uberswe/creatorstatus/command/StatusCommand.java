@@ -31,7 +31,7 @@ public class StatusCommand {
     private static int executeNone(CommandContext<CommandSourceStack> command){
         if(command.getSource().getEntity() instanceof Player player){
             player.sendSystemMessage(Component.translatable(MESSAGE_NONE));
-            StatusData.setPlayerStatus(player.getStringUUID(), CreatorStatus.NONE);
+            StatusData.setPlayerStatus(player.getStringUUID(), CreatorStatus.Status.NONE);
             ModEvents.broadcastStatusUpdate();
         }
         return Command.SINGLE_SUCCESS;
@@ -39,7 +39,7 @@ public class StatusCommand {
     private static int executeStreaming(CommandContext<CommandSourceStack> command){
         if(command.getSource().getEntity() instanceof Player player){
             player.sendSystemMessage(Component.translatable(MESSAGE_STREAMING));
-            StatusData.setPlayerStatus(player.getStringUUID(), CreatorStatus.STREAMING);
+            StatusData.setPlayerStatus(player.getStringUUID(), CreatorStatus.Status.STREAMING);
             ModEvents.broadcastStatusUpdate();
         }
         return Command.SINGLE_SUCCESS;
@@ -47,7 +47,7 @@ public class StatusCommand {
     private static int executeRecording(CommandContext<CommandSourceStack> command){
         if(command.getSource().getEntity() instanceof Player player){
             player.sendSystemMessage(Component.translatable(MESSAGE_RECORDING));
-            StatusData.setPlayerStatus(player.getStringUUID(), CreatorStatus.RECORDING);
+            StatusData.setPlayerStatus(player.getStringUUID(), CreatorStatus.Status.RECORDING);
             ModEvents.broadcastStatusUpdate();
         }
         return Command.SINGLE_SUCCESS;
@@ -55,7 +55,7 @@ public class StatusCommand {
     private static int executeDNR(CommandContext<CommandSourceStack> command){
         if(command.getSource().getEntity() instanceof Player player){
             player.sendSystemMessage(Component.translatable(MESSAGE_DNR));
-            StatusData.setPlayerStatus(player.getStringUUID(), CreatorStatus.DO_NOT_RECORD);
+            StatusData.setPlayerStatus(player.getStringUUID(), CreatorStatus.Status.DO_NOT_RECORD);
             ModEvents.broadcastStatusUpdate();
         }
         return Command.SINGLE_SUCCESS;

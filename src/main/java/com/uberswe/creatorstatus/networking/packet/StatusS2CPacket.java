@@ -9,18 +9,18 @@ import java.util.HashMap;
 import java.util.function.Supplier;
 
 public class StatusS2CPacket {
-    private final HashMap<String, Integer> statuses;
+    private final HashMap<String, CreatorStatus.Status> statuses;
 
-    public StatusS2CPacket(HashMap<String, Integer> statuses) {
+    public StatusS2CPacket(HashMap<String, CreatorStatus.Status> statuses) {
         this.statuses = statuses;
     }
 
     public StatusS2CPacket(FriendlyByteBuf buf) {
-        this.statuses = buf.readMap(HashMap::new, FriendlyByteBuf::readUtf, FriendlyByteBuf::readInt);
+        this.statuses = buf.readMap(HashMap::new, FriendlyByteBuf::readUtf, CreatorStatus.Status.values()[buf.readInt()]);
     }
 
     public void toBytes(FriendlyByteBuf buf) {
-        buf.writeMap(statuses, FriendlyByteBuf::writeUtf, FriendlyByteBuf::writeInt);
+        buf.writeMap(statuses, FriendlyByteBuf::writeUtf, FriendlyByteBuf::writeEnum);
     }
 
     public boolean handle(Supplier<NetworkEvent.Context> supplier) {

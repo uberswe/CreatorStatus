@@ -7,20 +7,20 @@ import java.util.HashMap;
 public class StatusData {
 
     private static HashMap<String, Integer> statuses;
-    public static void set(HashMap<String, Integer> statuses) {
+    public static void set(HashMap<String, CreatorStatus.Status> statuses) {
         StatusData.statuses = statuses;
     }
-    public static void setPlayerStatus(String uuid, int playerStatus) {
+    public static void setPlayerStatus(String uuid, CreatorStatus.Status playerStatus) {
         StatusData.statuses.put(uuid, playerStatus);
     }
-    public static int getPlayerStatus(String uuid) {
+    public static CreatorStatus.Status getPlayerStatus(String uuid) {
         if (StatusData.statuses.get(uuid) != null) {
             return StatusData.statuses.get(uuid);
         }
-        return CreatorStatus.NONE;
+        return CreatorStatus.Status.NONE;
     }
 
-    public static HashMap<String, Integer> getStatuses() {
+    public static HashMap<String, CreatorStatus.Status> getStatuses() {
         if (statuses == null) {
             statuses = new HashMap<>();
         }
