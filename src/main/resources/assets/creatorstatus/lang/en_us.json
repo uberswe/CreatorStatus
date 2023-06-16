@@ -2,5 +2,6 @@
   "message.creatorstatus.none": "Your status is now set to none",
   "message.creatorstatus.recording": "Your status is now set to 'Recording'",
   "message.creatorstatus.streaming": "Your status is now set to 'Streaming'",
-  "message.creatorstatus.donotrecord": "Your status is now set to 'Do Not Record'"
+  "message.creatorstatus.donotrecord": "Your status is now set to 'Do Not Record'",
+  "message.creatorstatus.opentocollab": "Your status is now set to 'Open To Collaborate'"
 }

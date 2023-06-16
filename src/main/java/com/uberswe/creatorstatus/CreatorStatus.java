@@ -30,6 +30,7 @@ public class CreatorStatus
     public static final int RECORDING = 1;
     public static final int STREAMING = 2;
     public static final int DO_NOT_RECORD = 3;
+    public static final int OPEN_TO_COLLAB = 4;
 
     public CreatorStatus()
     {
