@@ -14,7 +14,7 @@ public class StatusData {
         StatusData.statuses.put(uuid, playerStatus);
     }
     public static int getPlayerStatus(String uuid) {
-        if (StatusData.statuses.get(uuid) != null) {
+        if (StatusData.statuses != null && StatusData.statuses.get(uuid) != null) {
             return StatusData.statuses.get(uuid);
         }
         return CreatorStatus.NONE;

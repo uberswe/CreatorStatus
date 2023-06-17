@@ -22,7 +22,7 @@ mixin {
     config "creatorstatus.mixins.json"
 }
 
-version = '0.1.0-1.19.2'
+version = '0.1.1-1.19.2'
 group = 'com.uberswe.creatorstatus' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'creatorstatus'
 
